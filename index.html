@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>موقعي الشخصي — اسمك هنا</title>
+  <meta name="description" content="موقع شخصي احترافي باللغة العربية مع أقسام: نبذة، أعمالي، الخدمات، المدونة، تواصل." />
+  <meta name="keywords" content="موقع شخصي, عربي, أعمالي, سيرة ذاتية, خدمات, تواصل" />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="موقعي الشخصي — اسمك هنا" />
+  <meta property="og:description" content="موقع شخصي عربي — أعمالي وخدماتي وتواصل." />
+  <meta property="og:image" content="/cover.jpg" />
+  <meta property="og:url" content="https://example.com" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "اسمك هنا",
+    "jobTitle": "المسمى الوظيفي",
+    "url": "https://example.com",
+    "sameAs": [
+      "https://twitter.com/username",
+      "https://www.linkedin.com/in/username/",
+      "https://github.com/username"
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CDN (سهل وسريع للبداية) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // إعداد ألوان مخصّصة إن رغبت
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff', 100:'#dbeafe', 200:'#bfdbfe', 300:'#93c5fd', 400:'#60a5fa', 500:'#3b82f6', 600:'#2563eb', 700:'#1d4ed8', 800:'#1e40af', 900:'#1e3a8a'
+            }
+          },
+          boxShadow: { soft: '0 10px 25px rgba(0,0,0,0.08)'}
+        }
+      }
+    }
+  </script>
+  <style>
+    /* خطوط نظامية لضمان أداء ممتاز */
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Kufi Arabic", Tahoma, Arial, sans-serif; }
+    /* تأثير كتابي لطيف */
+    .gradient-text { background: linear-gradient(90deg, #06b6d4, #3b82f6, #8b5cf6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  </style>
+</head>
+<body class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
+  <!-- شريط علوي ثبّت عند التمرير -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <a href="#hero" class="font-bold text-lg">اسمك<span class="text-brand-600">.</span></a>
+        <nav class="hidden md:flex gap-6 text-sm">
+          <a class="hover:text-brand-600" href="#about">نبذة</a>
+          <a class="hover:text-brand-600" href="#projects">أعمالي</a>
+          <a class="hover:text-brand-600" href="#services">الخدمات</a>
+          <a class="hover:text-brand-600" href="#pricing">الباقات</a>
+          <a class="hover:text-brand-600" href="#blog">المدونة</a>
+          <a class="hover:text-brand-600" href="#contact">تواصل</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="themeToggle" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="تبديل السِمة">🌓</button>
+          <button id="menuBtn" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 md:hidden" aria-label="القائمة">☰</button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden pb-3">
+        <nav class="grid gap-2 text-sm">
+          <a class="hover:text-brand-600" href="#about">نبذة</a>
+          <a class="hover:text-brand-600" href="#projects">أعمالي</a>
+          <a class="hover:text-brand-600" href="#services">الخدمات</a>
+          <a class="hover:text-brand-600" href="#pricing">الباقات</a>
+          <a class="hover:text-brand-600" href="#blog">المدونة</a>
+          <a class="hover:text-brand-600" href="#contact">تواصل</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- بطل الصفحة -->
+  <section id="hero" class="relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 py-20 lg:py-28 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mb-2">مرحبًا، أنا</p>
+        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight mb-4 gradient-text">اسمك هنا — مسمى وظيفي مختصر</h1>
+        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-8">أقدّم حلول تصميم/برمجة/تسويق لبناء منتجات وخدمات رقمية عالية الجودة. اكتشف أعمالي وطرق التعاون معي.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#projects" class="px-5 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700 shadow-soft">أعمالي</a>
+          <a href="#contact" class="px-5 py-3 rounded-2xl border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800">اطلب خدمة</a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-square rounded-3xl bg-gradient-to-br from-brand-200 to-brand-500/30 dark:from-brand-900/40 dark:to-brand-600/30 p-2">
+          <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=800&auto=format&fit=crop" alt="صورة شخصية/عمل" class="w-full h-full object-cover rounded-2xl" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- نبذة -->
+  <section id="about" class="py-16 lg:py-24 bg-slate-50 dark:bg-slate-900/40">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-3 gap-10 items-start">
+      <div class="lg:col-span-2">
+        <h2 class="text-2xl font-bold mb-4">نبذة عني</h2>
+        <p class="leading-8 text-slate-700 dark:text-slate-300">مختص في <strong>المجال</strong> مع خبرة تزيد عن X سنوات في بناء حلول عملية. أحب تبسيط التعقيد وتحويل الأفكار إلى منتجات مفيدة.
+        </p>
+      </div>
+      <aside class="grid gap-3">
+        <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <p class="text-sm text-slate-500">البريد</p>
+          <a href="mailto:you@example.com" class="font-medium">you@example.com</a>
+        </div>
+        <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <p class="text-sm text-slate-500">الموقع</p>
+          <p class="font-medium">القاهرة، مصر</p>
+        </div>
+        <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <p class="text-sm text-slate-500">متاح لـ</p>
+          <p class="font-medium">مشاريع حرة — دوام جزئي — استشارات</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- أعمالي / مشاريع -->
+  <section id="projects" class="py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold">أعمالي المختارة</h2>
+        <a href="#contact" class="text-sm text-brand-700 hover:underline">هل لديك مشروع؟</a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- بطاقة مشروع -->
+        <article class="group rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-soft transition">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=800&auto=format&fit=crop" alt="مشروع 1" class="h-44 w-full object-cover" />
+          <div class="p-4">
+            <h3 class="font-semibold group-hover:text-brand-700">مشروع 1 — منصة متاجر</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">وصف مختصر من سطرين للمشروع والنتيجة.</p>
+            <div class="mt-3 flex gap-2 text-xs">
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Next.js</span>
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Tailwind</span>
+            </div>
+          </div>
+        </article>
+        <!-- تكرار أمثلة -->
+        <article class="group rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-soft transition">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="مشروع 2" class="h-44 w-full object-cover" />
+          <div class="p-4">
+            <h3 class="font-semibold group-hover:text-brand-700">مشروع 2 — لوحة تحكم</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">نتائج كمية: ↑ التحويل 35%، ↓ التكلفة 20%.</p>
+            <div class="mt-3 flex gap-2 text-xs">
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">React</span>
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Node</span>
+            </div>
+          </div>
+        </article>
+        <article class="group rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-soft transition">
+          <img src="https://images.unsplash.com/photo-1559027615-5e05f6ba9890?q=80&w=800&auto=format&fit=crop" alt="مشروع 3" class="h-44 w-full object-cover" />
+          <div class="p-4">
+            <h3 class="font-semibold group-hover:text-brand-700">مشروع 3 — تطبيق جوال</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">واجهة عربية سريعة ومتجاوبة.</p>
+            <div class="mt-3 flex gap-2 text-xs">
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Flutter</span>
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Firebase</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- الخدمات -->
+  <section id="services" class="py-16 lg:py-24 bg-slate-50 dark:bg-slate-900/40">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-8">الخدمات</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+          <h3 class="font-semibold mb-2">تصميم مواقع</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400">تصميم حديث قابل للتخصيص والقياس.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+          <h3 class="font-semibold mb-2">تطوير واجهات</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400">React / Next.js — أداء عالي وتحسين SEO.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+          <h3 class="font-semibold mb-2">استشارات وتحسين</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400">تسريع موقعك وتحسين تجربة المستخدم.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- الباقات / التسعير -->
+  <section id="pricing" class="py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-8">الباقات</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <h3 class="font-semibold">بداية</h3>
+          <p class="text-3xl font-extrabold my-3">$199</p>
+          <ul class="text-sm space-y-2 text-slate-600 dark:text-slate-400">
+            <li>صفحة واحدة</li>
+            <li>نموذج تواصل</li>
+            <li>تسليم خلال 5 أيام</li>
+          </ul>
+          <a href="#contact" class="mt-4 inline-block px-4 py-2 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900">اطلب الآن</a>
+        </div>
+        <div class="p-6 rounded-2xl border-2 border-brand-600 shadow-soft">
+          <h3 class="font-semibold">احترافي</h3>
+          <p class="text-3xl font-extrabold my-3">$499</p>
+          <ul class="text-sm space-y-2 text-slate-600 dark:text-slate-400">
+            <li>حتى 5 صفحات</li>
+            <li>مدونة بسيطة</li>
+            <li>تحسين SEO أساسي</li>
+          </ul>
+          <a href="#contact" class="mt-4 inline-block px-4 py-2 rounded-xl bg-brand-600 text-white">اطلب الآن</a>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <h3 class="font-semibold">مخصص</h3>
+          <p class="text-3xl font-extrabold my-3">اتفق معي</p>
+          <ul class="text-sm space-y-2 text-slate-600 dark:text-slate-400">
+            <li>مزايا حسب الطلب</li>
+            <li>تكاملات خارجية</li>
+            <li>دعم مستمر</li>
+          </ul>
+          <a href="#contact" class="mt-4 inline-block px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700">تواصل</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- المدونة (كروت ثابتة كبداية) -->
+  <section id="blog" class="py-16 lg:py-24 bg-slate-50 dark:bg-slate-900/40">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-8">المدونة</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="عنوان التدوينة" class="h-40 w-full object-cover" />
+          <div class="p-4">
+            <h3 class="font-semibold">5 نصائح لتسريع موقعك</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">ملخص بسيط للتدوينة…</p>
+            <a href="#" class="text-sm text-brand-700 mt-3 inline-block">اقرأ المزيد</a>
+          </div>
+        </article>
+        <article class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=800&auto=format&fit=crop" alt="عنوان التدوينة" class="h-40 w-full object-cover" />
+          <div class="p-4">
+            <h3 class="font-semibold">دليل مبسّط لتحسين SEO</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">أفكار عملية وسريعة…</p>
+            <a href="#" class="text-sm text-brand-700 mt-3 inline-block">اقرأ المزيد</a>
+          </div>
+        </article>
+        <article class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+          <img src="https://images.unsplash.com/photo-1517430816045-df4b7de01f66?q=80&w=800&auto=format&fit=crop" alt="عنوان التدوينة" class="h-40 w-full object-cover" />
+          <div class="p-4">
+            <h3 class="font-semibold">اختصارات إنتاجية للمصممين</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">طرق ذكية لإنجاز العمل…</p>
+            <a href="#" class="text-sm text-brand-700 mt-3 inline-block">اقرأ المزيد</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- تواصل -->
+  <section id="contact" class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6">تواصل معي</h2>
+      <p class="text-slate-600 dark:text-slate-300 mb-6">استخدم النموذج التالي أو راسلني مباشرة على <a class="text-brand-700" href="mailto:you@example.com">you@example.com</a></p>
+
+      <!-- ملاحظة: لتفعيل الإرسال بدون خادم، استبدل action برابط Formspree أو Getform -->
+      <form id="contactForm" class="grid gap-4 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm text-slate-600 dark:text-slate-400">الاسم</label>
+            <input required name="name" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 p-3" placeholder="اسمك الكامل" />
+          </div>
+          <div>
+            <label class="text-sm text-slate-600 dark:text-slate-400">البريد الإلكتروني</label>
+            <input required type="email" name="email" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 p-3" placeholder="you@example.com" />
+          </div>
+        </div>
+        <div>
+          <label class="text-sm text-slate-600 dark:text-slate-400">الموضوع</label>
+          <input name="subject" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 p-3" placeholder="عنوان رسالتك" />
+        </div>
+        <div>
+          <label class="text-sm text-slate-600 dark:text-slate-400">الرسالة</label>
+          <textarea required name="message" rows="5" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 p-3" placeholder="اكتب رسالتك هنا..."></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+          <label class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+            <input id="consent" type="checkbox" class="rounded" />
+            أوافق على سياسة الخصوصية
+          </label>
+          <button type="submit" class="px-5 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700">إرسال</button>
+        </div>
+        <p id="formStatus" class="text-sm"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="py-10 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-slate-500">© <span id="year"></span> اسمك. جميع الحقوق محفوظة.</p>
+      <div class="flex gap-4 text-xl">
+        <a href="#" aria-label="تويتر">🐦</a>
+        <a href="#" aria-label="لينكدإن">💼</a>
+        <a href="#" aria-label="جِت هَب">💻</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- سكربتات بسيطة -->
+  <script>
+    // سنة ديناميكية
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // قائمة الهاتف
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // تبديل السمة وتخزينها
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    function applyTheme(t) { t === 'dark' ? root.classList.add('dark') : root.classList.remove('dark'); }
+    const savedTheme = localStorage.getItem('theme');
+    applyTheme(savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+    themeToggle?.addEventListener('click', () => {
+      const isDark = root.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // نموذج تواصل (بدون خادم — يعرض رسالة نجاح فقط)
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!document.getElementById('consent').checked) {
+        statusEl.textContent = 'يرجى الموافقة على سياسة الخصوصية قبل الإرسال.';
+        statusEl.className = 'text-sm text-red-600';
+        return;
+      }
+      // TODO: استبدل هذا بـ fetch إلى خدمة مثل Formspree/Getform أو خادمك الخاص
+      statusEl.textContent = 'تم استلام رسالتك! سأعاود التواصل قريبًا.';
+      statusEl.className = 'text-sm text-green-600';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
